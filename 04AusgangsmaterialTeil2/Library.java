@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Library {
 
@@ -66,11 +68,11 @@ public class Library {
     	return borrowedBy;
     }
     
-    public ArrayList<Client> clientMostBorrowedBooks() {
-    	ArrayList<Client> mostBorrowedBooks = new ArrayList<>();
+    public Map<Client, Integer> clientMostBorrowedBooks() {
+    	Map<Client,Integer> mostBorrowedBooks = new HashMap<>();
     	for (Client client : clients) {
     		if (client.getBorrowedBooks().size() > 0) {
-    			mostBorrowedBooks.add(client);
+    			mostBorrowedBooks.put(client, client.getBorrowedBooks().size());
     		}
     	}
     	return mostBorrowedBooks;

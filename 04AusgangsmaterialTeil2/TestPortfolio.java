@@ -4,16 +4,20 @@ import org.junit.jupiter.api.Test;
 
 class TestPortfolio {
 
+	private static String DEFAULT_CATEGORY = "Test Category";
+	private static String DEFAULT_AUTHOR = "Authot";
+	private static String DEFAULT_TITLE = "Title";
 	private Book testBook;
 	private Library testLibrary;
 	private Client testClient;
 
 	void test() {
+		
 	}
 
 	@Test
 	void compactDisc() {
-		testBook = new Book("Mein erstes Testbuch");
+		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		testBook.setCompactDisc(true);
 		assertTrue(testBook.isCompactDisc());
 		testBook.setCompactDisc(false);
@@ -22,7 +26,7 @@ class TestPortfolio {
 
 	@Test
 	void deleteBook() {
-		testBook = new Book("Mein erstes Testbuch");
+		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		testLibrary = new Library();
 		testLibrary.addBook(testBook);
 		assertEquals(1, testLibrary.getBooks().size());
@@ -34,8 +38,8 @@ class TestPortfolio {
 	void addAndBorrowBook() {
 		testLibrary = new Library();
 		testClient = new Client("Test Name", "Test Adresse");
-		testBook = new Book("Mein erstes Testbuch");
-		Book secondBook = new Book("Mein zweites Testbuch");
+		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
+		Book secondBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		// Pr�fen, ob ein Buch dem Clienten und der Library hinzugef�gt wird.
 		assertEquals(0, testLibrary.getBooks().size());
 		testLibrary.addAndBorrowBook(testBook, testClient);
@@ -54,7 +58,7 @@ class TestPortfolio {
 	void borrowDublicateBook() {
 		testLibrary = new Library();
 		testClient = new Client("Test Name", "Test Adresse");
-		testBook = new Book("Mein erstes Testbuch");
+		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		testLibrary.addAndBorrowBook(testBook, testClient);
 		testLibrary.addAndBorrowBook(testBook, testClient);
 		assertEquals(1,testLibrary.getBooks().size());
@@ -63,14 +67,14 @@ class TestPortfolio {
 
 	@Test
 	void hasCategory() {
-		testBook = new Book("Mein erstes Testbuch");
+		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		assertTrue(testBook.hasCategory("Roman"));
 		assertFalse(testBook.hasCategory("irdendwas"));
 	}
 
 	@Test
 	void addPage() {
-		testBook = new Book("Noch ein Testbuch");
+		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		assertEquals(0, testBook.getPageContent().size());
 		testBook.addPage("Eine Seite Text. Mit vielleicht " + "ein bisschen mehr Text");
 		assertEquals(1, testBook.getPageContent().size());
@@ -78,7 +82,7 @@ class TestPortfolio {
 
 	@Test
 	void contains() {
-		testBook = new Book("Testbuch");
+		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		testBook.addPage("Test Text");
 		assertTrue(testBook.contains("Test Text"));
 		assertFalse(testBook.contains("irgendwas"));
@@ -89,7 +93,7 @@ class TestPortfolio {
 	 */
 	@Test
 	void addBook() {
-		testBook = new Book("Mein erstes Testbuch");
+		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		testLibrary = new Library();
 		testLibrary.addBook(testBook);
 		assertEquals(1, testLibrary.getBooks().size());
@@ -112,7 +116,7 @@ class TestPortfolio {
 	void returnBook() {
 		testLibrary = new Library();
 		testClient = new Client("Testname","Adresse");
-		testBook = new Book("Testbuch");
+		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		
 		assertEquals(0,testLibrary.getBooks().size());		
 		testLibrary.addAndBorrowBook(testBook, testClient);

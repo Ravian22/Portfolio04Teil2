@@ -1,45 +1,15 @@
 import java.util.ArrayList;
 
-public class Book {
-    private String title;
-    private String category;
+public class Book extends Media {
     private ArrayList<String> pageContent;
-    private String author;
-    private boolean compactDisc;
-
-    public Book (String title) {
-        this.title = title;
-        this.author = "Autor";
-        this.category = "Roman";
+    
+    public Book (String title,String category, String author) {
+    	super(title,category,author);
         this.pageContent = new ArrayList<>();
     }
-    
-    public String getTitle() {
-    	return title;
-    }
-    
-    public String getCategory() {
-    	return category;
-    }
-    
-    public String getAuthor() {
-    	return author;
-    }
-    
+     
     public ArrayList<String> getPageContent() {
     	return pageContent;
-    }
-
-    public void setCompactDisc (boolean compactDisc) {
-        this.compactDisc = compactDisc;
-    }
-
-    public boolean isCompactDisc () {
-        return compactDisc;
-    }
-    
-    public boolean hasCategory (String category) {
-        return this.category.equals (category);
     }
     
     public void addPage (String text_of_page) {
