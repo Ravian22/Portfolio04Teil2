@@ -49,6 +49,17 @@ class TestPortfolio {
 		// Pr�fen, ob das Buch aber trotzdem dem Clienten zugeordnet wird.
 		assertEquals(2, testClient.getBorrowedBooks().size());
 	}
+	
+	@Test
+	void borrowDublicateBook() {
+		testLibrary = new Library();
+		testClient = new Client("Test Name", "Test Adresse");
+		testBook = new Book("Mein erstes Testbuch");
+		testLibrary.addAndBorrowBook(testBook, testClient);
+		testLibrary.addAndBorrowBook(testBook, testClient);
+		assertEquals(1,testLibrary.getBooks().size());
+		assertEquals(2, testClient.getBorrowedBooks().size());
+	}
 
 	@Test
 	void hasCategory() {

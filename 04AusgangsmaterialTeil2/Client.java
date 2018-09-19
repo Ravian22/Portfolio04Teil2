@@ -13,6 +13,10 @@ public class Client {
 		this.address = address;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
 	public ArrayList<Book> getBorrowedBooks() {
 		return borrowedBooks;
 	}

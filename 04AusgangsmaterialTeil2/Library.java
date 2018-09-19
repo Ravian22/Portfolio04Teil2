@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Library {
 
     private ArrayList<Book> books = new ArrayList();
-
     private ArrayList<Client> clients = new ArrayList();
     
     public ArrayList<Book> getBooks() {
@@ -15,7 +14,7 @@ public class Library {
     }
     
     public void addBook (Book book) {
-        books.add (book);
+        books.add(book);
     }
     
 	public void addToLibrary (Client client) {
@@ -65,5 +64,15 @@ public class Library {
     		}
     	}
     	return borrowedBy;
+    }
+    
+    public ArrayList<Client> clientMostBorrowedBooks() {
+    	ArrayList<Client> mostBorrowedBooks = new ArrayList<>();
+    	for (Client client : clients) {
+    		if (client.getBorrowedBooks().size() > 0) {
+    			mostBorrowedBooks.add(client);
+    		}
+    	}
+    	return mostBorrowedBooks;
     }
 }
