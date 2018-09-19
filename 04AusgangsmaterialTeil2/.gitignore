@@ -1,4 +1,4 @@
-doc//Book.class
+Book.class
 /Client.class
 /Library.class
 /TestPortfolio.class
@@ -9,3 +9,4 @@ doc//Book.class
 /Library.ctxt
 /README.TXT
 /package.bluej
+/doc/
