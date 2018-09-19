@@ -68,7 +68,7 @@ class TestPortfolio {
 	@Test
 	void hasCategory() {
 		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
-		assertTrue(testBook.hasCategory("Roman"));
+		assertTrue(testBook.hasCategory(DEFAULT_CATEGORY));
 		assertFalse(testBook.hasCategory("irdendwas"));
 	}
 
@@ -125,7 +125,7 @@ class TestPortfolio {
 		assertEquals(1,testClient.getBorrowedBooks().size());
 		testClient.returnBook("Falscher Titel");
 		assertEquals(1, testClient.getBorrowedBooks().size());
-		testClient.returnBook("Testbuch");
+		testClient.returnBook(DEFAULT_TITLE);
 		assertEquals(0,testClient.getBorrowedBooks().size());		
 	}
 	

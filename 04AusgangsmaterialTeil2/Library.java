@@ -4,11 +4,11 @@ import java.util.Map;
 
 public class Library {
 
-    private ArrayList<Book> books = new ArrayList();
+    private ArrayList<Media> medias = new ArrayList();
     private ArrayList<Client> clients = new ArrayList();
     
-    public ArrayList<Book> getBooks() {
-    	return books;
+    public ArrayList<Media> getBooks() {
+    	return medias;
     }
     
     public ArrayList<Client> getClients() {
@@ -16,7 +16,7 @@ public class Library {
     }
     
     public void addBook (Book book) {
-        books.add(book);
+        medias.add(book);
     }
     
 	public void addToLibrary (Client client) {
@@ -24,14 +24,14 @@ public class Library {
 	}
 	
     public void deleteBook (Book book) {
-        books.remove(book);
+        medias.remove(book);
         for (Client client : clients) {
             client.removeBorrowedBook(book);
         }
     }
     
     public void addAndBorrowBook (Book book,Client client) {
-        if (!books.contains(book)) {
+        if (!medias.contains(book)) {
             addBook(book);
         }
         if (!book.isCompactDisc()) {
@@ -40,7 +40,7 @@ public class Library {
     }
     
     public void addAndBorrowCD (Book book, Client CLIENT) {
-        if (!books.contains(book) && book.isCompactDisc()) {
+        if (!medias.contains(book) && book.isCompactDisc()) {
             addBook(book);
         }
         if (book.isCompactDisc()) {
@@ -49,11 +49,11 @@ public class Library {
     }
 
     public void printListOfBooks () {
-        for (Book book : books) {
-            if (!book.isCompactDisc()) {
-                System.out.println (book.getTitle() +" # "+book.getCategory() + book.getAuthor());
+        for (Media media : medias) {
+            if (!media.isCompactDisc()) {
+                System.out.println (media.getTitle() +" # "+media.getCategory() + media.getAuthor());
             } else {
-                System.out.println (book.getTitle()+" # CD");
+                System.out.println (media.getTitle()+" # CD");
             }
         }
     }
