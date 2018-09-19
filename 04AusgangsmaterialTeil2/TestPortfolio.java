@@ -9,7 +9,6 @@ class TestPortfolio {
 	private Client testClient;
 
 	void test() {
-		fail("Not yet implemented");
 	}
 
 	@Test
@@ -26,9 +25,9 @@ class TestPortfolio {
 		testBook = new Book("Mein erstes Testbuch");
 		testLibrary = new Library();
 		testLibrary.addBook(testBook);
-		assertEquals(1, testLibrary.books.size());
-		testBook.deleteBook(testLibrary);
-		assertEquals(0, testLibrary.books.size());
+		assertEquals(1, testLibrary.getBooks().size());
+		testLibrary.deleteBook(testBook);;
+		assertEquals(0, testLibrary.getBooks().size());
 	}
 
 	@Test
@@ -38,17 +37,17 @@ class TestPortfolio {
 		testBook = new Book("Mein erstes Testbuch");
 		Book secondBook = new Book("Mein zweites Testbuch");
 		// Pr�fen, ob ein Buch dem Clienten und der Library hinzugef�gt wird.
-		assertEquals(0, testLibrary.books.size());
-		testBook.addAndBorrowBook(testLibrary, testClient);
-		assertEquals(1, testLibrary.books.size());
-		assertEquals(1, testClient.borrowedBooks.size());
+		assertEquals(0, testLibrary.getBooks().size());
+		testLibrary.addAndBorrowBook(testBook, testClient);
+		assertEquals(1, testLibrary.getBooks().size());
+		assertEquals(1, testClient.getBorrowedBooks().size());
 		// Pr�fen, ob ein Buch nicht zweimal hinzugef�gt wird.
 		testLibrary.addBook(secondBook);
-		assertEquals(2, testLibrary.books.size());
-		secondBook.addAndBorrowBook(testLibrary, testClient);
-		assertEquals(2, testLibrary.books.size());
+		assertEquals(2, testLibrary.getBooks().size());
+		testLibrary.addAndBorrowBook(secondBook, testClient);
+		assertEquals(2, testLibrary.getBooks().size());
 		// Pr�fen, ob das Buch aber trotzdem dem Clienten zugeordnet wird.
-		assertEquals(2, testClient.borrowedBooks.size());
+		assertEquals(2, testClient.getBorrowedBooks().size());
 	}
 
 	@Test
@@ -82,7 +81,7 @@ class TestPortfolio {
 		testBook = new Book("Mein erstes Testbuch");
 		testLibrary = new Library();
 		testLibrary.addBook(testBook);
-		assertEquals(1, testLibrary.books.size());
+		assertEquals(1, testLibrary.getBooks().size());
 	}
 	
 	/**
@@ -92,10 +91,10 @@ class TestPortfolio {
 	void addToLibrary() {
 		testLibrary = new Library();
 		testClient = new Client("Testname","Adresse");
-		assertEquals(0, testLibrary.clients.size());
-		testClient.addToLibrary(testLibrary);
-		assertEquals(testClient, testLibrary.clients.get(0));
-		assertEquals(1,testLibrary.clients.size());		
+		assertEquals(0, testLibrary.getClients().size());
+		testLibrary.addToLibrary(testClient);
+		assertEquals(testClient, testLibrary.getClients().get(0));
+		assertEquals(1,testLibrary.getClients().size());		
 	}
 	
 	@Test
@@ -104,9 +103,9 @@ class TestPortfolio {
 		testClient = new Client("Testname","Adresse");
 		testBook = new Book("Testbuch");
 		
-		assertEquals(0,testLibrary.books.size());		
-		testBook.addAndBorrowBook(testLibrary, testClient);
-		assertEquals(1,testLibrary.books.size());	
+		assertEquals(0,testLibrary.getBooks().size());		
+		testLibrary.addAndBorrowBook(testBook, testClient);
+		assertEquals(1,testLibrary.getBooks().size());	
 		assertEquals(testBook,testClient.borrowedBooks.get(0));
 		assertEquals(1,testClient.borrowedBooks.size());
 		testClient.returnBook("Falscher Titel");

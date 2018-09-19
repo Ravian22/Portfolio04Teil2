@@ -1,17 +1,29 @@
 import java.util.ArrayList;
 
 public class Book {
-    public String booktitle;
-    public String category;
-    public ArrayList<String> pageContent;
-    public String author;
+    private String title;
+    private String category;
+    private ArrayList<String> pageContent;
+    private String author;
     private boolean compactDisc;
 
     public Book (String title) {
-        this.booktitle = title;
+        this.title = title;
         this.author = "Autor";
         this.category = "Roman";
         this.pageContent = new ArrayList<>();
+    }
+    
+    public String getTitle() {
+    	return title;
+    }
+    
+    public String getCategory() {
+    	return category;
+    }
+    
+    public String getAuthor() {
+    	return author;
     }
 
     public void setCompactDisc (boolean compactDisc) {
@@ -20,31 +32,6 @@ public class Book {
 
     public boolean isCompactDisc () {
         return compactDisc;
-    }
-
-    public void deleteBook (Library libRary) {
-        libRary.books.remove (this);
-        for (Client client : libRary.clients) {
-            client.borrowedBooks.remove (this);
-        }
-    }
-
-    public void addAndBorrowBook (Library l, Client CLIENT) {
-        if (!l.books.contains(this)) {
-            l.addBook (this);
-        }
-        if (!this.isCompactDisc()) {
-            CLIENT.borrowedBooks.add (this);
-        }
-    }
-    
-    public void addAndBorrowCD (Library l, Client CLIENT) {
-        if (!l.books.contains(this) && this.isCompactDisc()) {
-            l.addBook (this);
-        }
-        if (this.isCompactDisc()) {
-            CLIENT.borrowedBooks.add (this);
-        }
     }
     
     public boolean hasCategory (String category) {
