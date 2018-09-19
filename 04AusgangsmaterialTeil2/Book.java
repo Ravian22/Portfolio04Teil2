@@ -25,6 +25,10 @@ public class Book {
     public String getAuthor() {
     	return author;
     }
+    
+    public ArrayList<String> getPageContent() {
+    	return pageContent;
+    }
 
     public void setCompactDisc (boolean compactDisc) {
         this.compactDisc = compactDisc;

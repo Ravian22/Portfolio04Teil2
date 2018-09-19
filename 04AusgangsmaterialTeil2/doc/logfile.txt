@@ -1,0 +1,172 @@
+Project documentation
+<---- javadoc command: ---->
+C:\Program Files (x86)\BlueJ\jdk\bin\javadoc.exe
+-sourcepath
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2
+-source
+1.8
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.11.jar;C:\Program Files (x86)\BlueJ\lib\hamcrest-core-1.3.jar;C:\Program Files (x86)\BlueJ\lib\lang-stride.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2
+-d
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-doctitle
+04AusgangsmaterialTeil2
+-windowtitle
+04AusgangsmaterialTeil2
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-link
+http://download.oracle.com/javase/8/docs/api/
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2/TestPortfolio.java
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2/Book.java
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2/Library.java
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2/Client.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java...
+Loading source file C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\Book.java...
+Loading source file C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\Library.java...
+Loading source file C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\Client.java...
+Constructing Javadoc information...
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:1: error: package org.junit.jupiter.api does not exist
+import static org.junit.jupiter.api.Assertions.*;
+                                   ^
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:3: error: package org.junit.jupiter.api does not exist
+import org.junit.jupiter.api.Test;
+                            ^
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:14: error: cannot find symbol
+	@Test
+	 ^
+  symbol:   class Test
+  location: class TestPortfolio
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:23: error: cannot find symbol
+	@Test
+	 ^
+  symbol:   class Test
+  location: class TestPortfolio
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:33: error: cannot find symbol
+	@Test
+	 ^
+  symbol:   class Test
+  location: class TestPortfolio
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:53: error: cannot find symbol
+	@Test
+	 ^
+  symbol:   class Test
+  location: class TestPortfolio
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:60: error: cannot find symbol
+	@Test
+	 ^
+  symbol:   class Test
+  location: class TestPortfolio
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:68: error: cannot find symbol
+	@Test
+	 ^
+  symbol:   class Test
+  location: class TestPortfolio
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:79: error: cannot find symbol
+	@Test
+	 ^
+  symbol:   class Test
+  location: class TestPortfolio
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:90: error: cannot find symbol
+	@Test
+	 ^
+  symbol:   class Test
+  location: class TestPortfolio
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:100: error: cannot find symbol
+	@Test
+	 ^
+  symbol:   class Test
+  location: class TestPortfolio
+C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\TestPortfolio.java:117: error: cannot find symbol
+	@Test
+	 ^
+  symbol:   class Test
+  location: class TestPortfolio
+javadoc: warning - Error fetching URL: http://download.oracle.com/javase/8/docs/api/
+Standard Doclet version 1.8.0_144
+Building tree for all the packages and classes...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\Book.html...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\Client.html...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\Library.html...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\TestPortfolio.html...
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\package-frame.html...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\package-summary.html...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\package-tree.html...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\constant-values.html...
+Building index for all the packages and classes...
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\overview-tree.html...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\index-all.html...
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+javadoc: warning - Class Test not found.
+Building index for all classes...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\allclasses-frame.html...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\allclasses-noframe.html...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\index.html...
+Generating C:\Users\hpaasch\git\Portfolio04Teil2\04AusgangsmaterialTeil2\doc\help-doc.html...
+73 warnings

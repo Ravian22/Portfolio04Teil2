@@ -60,9 +60,9 @@ class TestPortfolio {
 	@Test
 	void addPage() {
 		testBook = new Book("Noch ein Testbuch");
-		assertEquals(0, testBook.pageContent.size());
+		assertEquals(0, testBook.getPageContent().size());
 		testBook.addPage("Eine Seite Text. Mit vielleicht " + "ein bisschen mehr Text");
-		assertEquals(1, testBook.pageContent.size());
+		assertEquals(1, testBook.getPageContent().size());
 	}
 
 	@Test
@@ -106,18 +106,18 @@ class TestPortfolio {
 		assertEquals(0,testLibrary.getBooks().size());		
 		testLibrary.addAndBorrowBook(testBook, testClient);
 		assertEquals(1,testLibrary.getBooks().size());	
-		assertEquals(testBook,testClient.borrowedBooks.get(0));
-		assertEquals(1,testClient.borrowedBooks.size());
+		assertEquals(testBook,testClient.getBorrowedBooks().get(0));
+		assertEquals(1,testClient.getBorrowedBooks().size());
 		testClient.returnBook("Falscher Titel");
-		assertEquals(1, testClient.borrowedBooks.size());
+		assertEquals(1, testClient.getBorrowedBooks().size());
 		testClient.returnBook("Testbuch");
-		assertEquals(0,testClient.borrowedBooks.size());		
+		assertEquals(0,testClient.getBorrowedBooks().size());		
 	}
 	
 	@Test
 	void isFavoriteCategory() {
 		testClient = new Client("Name","Adresse");
-		testClient.favoriteCategories.add("Test1");
+		testClient.addFavoriteCategory("Test1");
 		assertTrue(testClient.isFavoriteCategory("Test1"));
 		assertFalse(testClient.isFavoriteCategory("Test2"));
 	}

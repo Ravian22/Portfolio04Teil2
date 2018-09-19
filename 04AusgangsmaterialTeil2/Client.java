@@ -24,6 +24,10 @@ public class Client {
 	public void addBorrowedBook(Book book) {
 		borrowedBooks.add(book);
 	}
+	
+	public void addFavoriteCategory(String category) {
+		favoriteCategories.add(category);
+	}
 
 
 	public void returnBook (String title) {
