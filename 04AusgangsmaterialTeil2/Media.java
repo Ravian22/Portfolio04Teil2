@@ -33,6 +33,10 @@ public class Media {
     public void addKeyword(String word) {
     	keywords.add(word);
     }
+    
+    public ArrayList<String> getKeywords() {
+    	return keywords;
+    }
 
     public boolean isCompactDisc () {
         return compactDisc;

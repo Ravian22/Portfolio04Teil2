@@ -28,7 +28,7 @@ class TestPortfolio {
 	void deleteBook() {
 		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		testLibrary = new Library();
-		testLibrary.addBook(testBook);
+		testLibrary.addMedia(testBook);
 		assertEquals(1, testLibrary.getBooks().size());
 		testLibrary.deleteBook(testBook);;
 		assertEquals(0, testLibrary.getBooks().size());
@@ -46,7 +46,7 @@ class TestPortfolio {
 		assertEquals(1, testLibrary.getBooks().size());
 		assertEquals(1, testClient.getBorrowedBooks().size());
 		// Pr�fen, ob ein Buch nicht zweimal hinzugef�gt wird.
-		testLibrary.addBook(secondBook);
+		testLibrary.addMedia(secondBook);
 		assertEquals(2, testLibrary.getBooks().size());
 		testLibrary.addAndBorrowBook(secondBook, testClient);
 		assertEquals(2, testLibrary.getBooks().size());
@@ -95,7 +95,7 @@ class TestPortfolio {
 	void addBook() {
 		testBook = new Book(DEFAULT_TITLE, DEFAULT_CATEGORY, DEFAULT_AUTHOR);
 		testLibrary = new Library();
-		testLibrary.addBook(testBook);
+		testLibrary.addMedia(testBook);
 		assertEquals(1, testLibrary.getBooks().size());
 	}
 	

@@ -15,8 +15,8 @@ public class Library {
     	return clients;
     }
     
-    public void addBook (Book book) {
-        medias.add(book);
+    public void addMedia (Media media) {
+        medias.add(media);
     }
     
 	public void addToLibrary (Client client) {
@@ -32,7 +32,7 @@ public class Library {
     
     public void addAndBorrowBook (Book book,Client client) {
         if (!medias.contains(book)) {
-            addBook(book);
+            addMedia(book);
         }
         if (!book.isCompactDisc()) {
             client.addBorrowedBook(book);
@@ -41,7 +41,7 @@ public class Library {
     
     public void addAndBorrowCD (Book book, Client CLIENT) {
         if (!medias.contains(book) && book.isCompactDisc()) {
-            addBook(book);
+            addMedia(book);
         }
         if (book.isCompactDisc()) {
             CLIENT.addBorrowedBook(book);
@@ -49,9 +49,14 @@ public class Library {
     }
 
     public void printListOfBooks () {
+    	String information = new String();
         for (Media media : medias) {
             if (!media.isCompactDisc()) {
-                System.out.println (media.getTitle() +" # "+media.getCategory() + media.getAuthor());
+                information = (media.getTitle() +" # "+media.getCategory() + " " + media.getAuthor());
+                for (String keyword : media.getKeywords()) {
+                	information += " " + keyword;
+                }
+                System.out.println(information);
             } else {
                 System.out.println (media.getTitle()+" # CD");
             }
